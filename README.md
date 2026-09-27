@@ -49,9 +49,9 @@ WHERE
 | Project | What it is | Stack | Status |
 |:--------|:-----------|:------|:------:|
 | **[Online Art Gallery](https://gallrex.runasp.net)** | Full e-commerce platform for digital art — auctions, bidding engine, OAuth, shopping cart | ASP.NET Core MVC · EF Core · SQL Server · OAuth 2.0 | `RUNNING` |
-| **[Shifa Management System](https://github.com/ahmed-husssain/ShifaMangementSystem)** | Comprehensive hospital/clinic management system — appointment workflows, patient records, role-based access | ASP.NET Core · C# · SQL Server · EF Core | `SHIPPED` |
+| **[Shifa Management System](https://github.com/ahmed-husssain/ShifaMangementSystem)** | Comprehensive hospital & clinic management system — billing engine, responsive invoice generator, role-based workflows | Flutter · Riverpod · Supabase / PostgreSQL · Clean Architecture | `SHIPPED` |
 | **[Mockrithm](https://mockrithm.me)** | AI interview prep platform — won **Runner-Up @ Aptech Vision 2025** out of all competing teams | Next.js · Firebase · REST APIs | `LIVE` |
-| **[E-Books Platform](https://github.com/ahmed-husssain)** | Digital library with auth, sessions, and relational schema in MySQL | PHP · MySQL · Tailwind CSS | `SHIPPED` |
+| **[E-Books Platform](https://github.com/ahmed-husssain)** | Digital library with auth, sessions, and normalized relational schema | PHP · Relational Database · Tailwind CSS | `SHIPPED` |
 
 ---
 
@@ -76,9 +76,9 @@ catch (DbUpdateConcurrencyException)
 // Auction close state — price reset when admin sets a higher starting price
 if (product.Price > (existing.CurrentBid ?? 0))
 {
-    existing.CurrentBid     = null;  // reset the bid
-    existing.HighestBidderId = null; // reset the winner
-    existing.BidCount       = 0;    // reset the count
+    existing.CurrentBid      = null;  // reset the bid
+    existing.HighestBidderId = null;  // reset the winner
+    existing.BidCount        = 0;     // reset the count
 }
 // because showing a "winning bid" below the starting price is not a feature.
 ```
@@ -96,7 +96,7 @@ if (product.Price > (existing.CurrentBid ?? 0))
   warn OLYMPICS2025: Winner — Aptech Tech Olympics Season 1 (Master of Excel Intelligence)
   warn TECHWIZ     : Participant — Aptech TechWiz. Project: FurShield.
   info  GALLREX    : live auction engine, idempotent bids, OAuth, real users
-  info  SHIFA      : hospital & clinic management system, role-based access control, appointment engine
+  info  SHIFA      : clinic & hospital billing platform, role-based access control, invoice engine
   info  MOCKRITHM  : AI interview prep, Firebase backend, public deployment
   info  STUDYING   : BSSE @ Virtual University · ACCP @ Aptech (Expected Aug 2027)
 
@@ -109,11 +109,10 @@ Build succeeded.  0 errors.  1 award.  One stubborn love for clean schemas.
 
 <div align="center">
 
-![C#](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=dotnet&logoColor=white)
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![EF Core](https://img.shields.io/badge/EF_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoft&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -127,13 +126,13 @@ Build succeeded.  0 errors.  1 award.  One stubborn love for clean schemas.
 ```
 backend/    C#  ASP.NET Core MVC  Web API  EF Core  LINQ  REST
              OAuth 2.0  Identity  RBAC  Idempotent API Design
-             SQL Server  MySQL  Schema Design  Indexing
+             SQL Server  Schema Design  Indexing  Concurrency Control
 
 frontend/   React  TypeScript  Next.js  Tailwind  GSAP  Three.js
 
 security/   OAuth 2.0 (Google · GitHub · Discord)  ASP.NET Core Identity  JWT
 
-tools/      Visual Studio  Git  GitHub  Postman  Firebase
+tools/      Visual Studio  Git  GitHub  Postman  Firebase  Supabase
 ```
 
 ---
@@ -146,7 +145,7 @@ tools/      Visual Studio  Git  GitHub  Postman  Firebase
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=ahmed-husssain&theme=github-dark-blue&hide_border=true&background=0d0d0d&ring=58A6FF&fire=58A6FF&currStreakNum=ffffff&sideNums=8b949e&currStreakLabel=58A6FF&sideLabels=8b949e&dates=8b949e" />
+  <img src="https://streak-stats.demolab.com/?user=ahmed-husssain&theme=github-dark-blue&hide_border=true&background=0d0d0d&ring=58A6FF&fire=58A6FF&currStreakNum=ffffff&sideNums=8b949e&currStreakLabel=58A6FF&sideLabels=8b949e&dates=8b949e&timezone=Asia/Karachi" />
 </div>
 
 ---
