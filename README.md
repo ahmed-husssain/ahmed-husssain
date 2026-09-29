@@ -137,18 +137,7 @@ tools/      Visual Studio  Git  GitHub  Postman  Firebase  Supabase
 
 ---
 
-## GitHub Stats
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ahmed-husssain&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d0d0d&title_color=58A6FF&icon_color=58A6FF&text_color=8b949e&rank_icon=github" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ahmed-husssain&layout=compact&theme=github_dark&hide_border=true&bg_color=0d0d0d&title_color=58A6FF&text_color=8b949e&langs_count=6" height="165" />
-</div>
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com/?user=ahmed-husssain&theme=github-dark-blue&hide_border=true&background=0d0d0d&ring=58A6FF&fire=58A6FF&currStreakNum=ffffff&sideNums=8b949e&currStreakLabel=58A6FF&sideLabels=8b949e&dates=8b949e&timezone=Asia/Karachi" />
-</div>
-
----
 
 ## `// stack trace of a career`
 
