@@ -17,7 +17,7 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2600&pause=1200&color=58A6FF&center=true&vCenter=true&width=600&lines=Backend+Engineer+%7C+.NET+%26+SQL+Server;Idempotent+APIs.+Because+double-charging+hurts.;Clean+schemas+first.+Features+second.;Runner-Up+%40+Aptech+Vision+2025)](https://ahmedd-dev.vercel.app/)
 
-[![Portfolio](https://img.shields.io/badge/ahmedd--dev.vercel.app-0d0d0d?style=flat-square&logo=vercel&logoColor=white)](https://ahmedhusssain.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Website-0d0d0d?style=flat-square&logo=vercel&logoColor=white)](https://ahmedhusssain.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/syed-ahmed-hussain)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ahamedhussain067@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ahmed-husssain)
