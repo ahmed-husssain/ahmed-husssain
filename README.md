@@ -2,24 +2,25 @@
   You read source before you hire. Respect.
   That's exactly how I approach every codebase I inherit.
 
-  Backend that actually runs: https://ahmedd-dev.vercel.app/
-  Problem worth solving?    ahamedhussain067@gmail.com
+  Backend that actually runs: https://ahmedhusssain.vercel.app/
+  Problem worth solving?     ahmedhusssain.dev@gmail.com
 -->
 
 <div align="center">
 
 ```
-╔══════════════════════════════════════════════════════════════╗
-║           SYED AHMED HUSSAIN  //  backend engineer           ║
-║          C# · ASP.NET Core · SQL Server · EF Core           ║
-╚══════════════════════════════════════════════════════════════╝
+┌──────────────────────────────────────────────────────────────┐
+│                AHMED HUSSAIN  //  backend engineer           │
+│         C# · ASP.NET Core · PostgreSQL · SQL Server          │
+│            shipping production code @ shifa healthcare       │
+└──────────────────────────────────────────────────────────────┘
 ```
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2600&pause=1200&color=58A6FF&center=true&vCenter=true&width=600&lines=Backend+Engineer+%7C+.NET+%26+SQL+Server;Idempotent+APIs.+Because+double-charging+hurts.;Clean+schemas+first.+Features+second.;Runner-Up+%40+Aptech+Vision+2025)](https://ahmedd-dev.vercel.app/)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2600&pause=1200&color=58A6FF&center=true&vCenter=true&width=620&lines=Backend+Engineer+%7C+C%23+.NET+%26+SQL+Server;Idempotent+APIs.+Because+double-charging+hurts.;Clean+schemas+first.+Features+second.;Runner-Up+%40+Aptech+Vision+2025;Shipping+Production+Code+%40+Shifa+Healthcare)](https://ahmedhusssain.vercel.app/)
 
 [![Portfolio](https://img.shields.io/badge/Website-0d0d0d?style=flat-square&logo=vercel&logoColor=white)](https://ahmedhusssain.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/syed-ahmed-hussain)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ahamedhussain067@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ahmed-husssain)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ahmedhusssain.dev@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ahmed-husssain)
 ![Profile Views](https://komarev.com/ghpvc/?username=ahmed-husssain&style=flat-square&color=58A6FF&label=profile+views)
 
@@ -29,12 +30,13 @@
 
 ```sql
 SELECT 
-    [Engineer] = 'Syed Ahmed Hussain',
-    [Location] = 'Karachi, Pakistan',
-    [Focus]    = 'Backend .NET | Relational Database Architecture',
-    [CoreStack]= STRING_AGG(tech, ' · ') 
-                 FROM (VALUES ('C#'), ('ASP.NET Core MVC'), ('Web API'), ('EF Core'), ('SQL Server')) AS T(tech),
-    [Status]   = 'Shipping Production Code & Building in Public'
+    [Engineer]    = 'Ahmed Hussain',
+    [Location]    = 'Karachi, Pakistan (PKT / UTC+5)',
+    [CurrentRole] = 'Software Developer @ Shifa Healthcare (Remote)',
+    [Focus]       = 'Backend .NET | Relational Database Architecture',
+    [CoreStack]   = STRING_AGG(tech, ' · ') 
+                    FROM (VALUES ('C#'), ('ASP.NET Core'), ('EF Core'), ('SQL Server'), ('PostgreSQL')) AS T(tech),
+    [Status]      = 'Shipping Production Code & Building in Public'
 WHERE 
     UnhandledExceptions = 0 
     AND IdempotencyGuaranteed = 1;
@@ -46,12 +48,12 @@ WHERE
 
 > These resolve. Click them.
 
-| Project | What it is | Stack | Status |
-|:--------|:-----------|:------|:------:|
-| **[Online Art Gallery](https://gallrex.runasp.net)** | Full e-commerce platform for digital art — auctions, bidding engine, OAuth, shopping cart | ASP.NET Core MVC · EF Core · SQL Server · OAuth 2.0 | `RUNNING` |
-| **[Shifa Management System](https://github.com/ahmed-husssain/ShifaMangementSystem)** | Comprehensive hospital & clinic management system — billing engine, responsive invoice generator, role-based workflows | Flutter · Riverpod · Supabase / PostgreSQL · Clean Architecture | `SHIPPED` |
-| **[Mockrithm](https://mockrithm.me)** | AI interview prep platform — won **Runner-Up @ Aptech Vision 2025** out of all competing teams | Next.js · Firebase · REST APIs | `LIVE` |
-| **[E-Books Platform](https://github.com/ahmed-husssain)** | Digital library with auth, sessions, and normalized relational schema | PHP · Relational Database · Tailwind CSS | `SHIPPED` |
+| Project | What it is & Architecture | Stack | Status |
+|:--------|:--------------------------|:------|:------:|
+| **[Online Art Gallery](https://gallrex.runasp.net)** | Digital art auction platform — live bidding engine, EF Core optimistic concurrency (`RowVersion`), sub-15s auto-settlement worker | ASP.NET Core MVC · EF Core · SQL Server · SignalR | `RUNNING` |
+| **[Shifa Management System](https://github.com/ahmed-husssain/ShifaMangementSystem)** | Clinical operations ERP — dynamic fee billing engine, atomic row locks (`SELECT ... FOR UPDATE`), WhatsApp automated invoice pipeline | Flutter · Riverpod · Supabase / PostgreSQL · Clean Arch | `SHIPPED` |
+| **[Mockrithm](https://mockrithm.me)** | AI technical interview simulation engine — **Runner-Up @ Aptech Vision 2025** out of 50+ competing teams | Next.js · Firebase · Data Structures & Algorithms | `LIVE` |
+| **[E-Books Platform](https://github.com/ahmed-husssain)** | Digital library with session management and normalized relational schema | C# / MVC · Relational Database · Tailwind CSS | `SHIPPED` |
 
 ---
 
@@ -60,25 +62,28 @@ WHERE
 No tutorial code. Here's the stuff that required thinking:
 
 ```csharp
-// Idempotency — user clicks "Place Bid" twice. Only one bid goes through.
+// 1. Idempotency — user clicks "Place Bid" twice; only one transaction executes.
 var idempotencyKey = Request.Headers["X-Idempotency-Key"].ToString();
 if (_memoryCache.TryGetValue(idempotencyKey, out object cached))
     return Json(cached);  // same response, zero duplicate processing
 
-// Optimistic concurrency — two collectors bid at the exact same millisecond.
-try { await _context.SaveChangesAsync(); }
+// 2. Optimistic concurrency — two collectors bid at the exact same millisecond.
+try 
+{ 
+    await _context.SaveChangesAsync(); 
+}
 catch (DbUpdateConcurrencyException)
 {
     return Json(new { message = "Another collector bid right before you. Please refresh." });
-    // no silent failure. no data corruption. just honest conflict resolution.
+    // no silent failure. no data corruption. deterministic conflict resolution.
 }
 
-// Auction close state — price reset when admin sets a higher starting price
+// 3. Auction close state — price reset when admin sets a higher starting price
 if (product.Price > (existing.CurrentBid ?? 0))
 {
-    existing.CurrentBid      = null;  // reset the bid
-    existing.HighestBidderId = null;  // reset the winner
-    existing.BidCount        = 0;     // reset the count
+    existing.CurrentBid      = null;  // reset active bid
+    existing.HighestBidderId = null;  // reset winner
+    existing.BidCount        = 0;     // reset counter
 }
 // because showing a "winning bid" below the starting price is not a feature.
 ```
@@ -92,12 +97,12 @@ if (product.Price > (existing.CurrentBid ?? 0))
 ```text
   Ahmed -> bin/Release/net8.0/Ahmed.dll
 
-  warn APTECH2025  : Runner-Up — Aptech Vision 2025. Project: Mockrithm.
-  warn OLYMPICS2025: Winner — Aptech Tech Olympics Season 1 (Master of Excel Intelligence)
-  warn TECHWIZ     : Participant — Aptech TechWiz. Project: FurShield.
-  info  GALLREX    : live auction engine, idempotent bids, OAuth, real users
-  info  SHIFA      : clinic & hospital billing platform, role-based access control, invoice engine
+  info  SHIFA      : clinical ERP in production, atomic billing locks, automated invoices
+  info  GALLREX    : live auction engine, idempotent bids, OAuth 2.0, real users
   info  MOCKRITHM  : AI interview prep, Firebase backend, public deployment
+  warn  APTECH2025 : Runner-Up — Aptech Vision 2025. Project: Mockrithm.
+  warn  OLYMPICS25 : Winner — Aptech Tech Olympics Season 1 (Master of Excel Intelligence)
+  warn  TECHWIZ    : Participant — Aptech TechWiz. Project: FurShield.
   info  STUDYING   : BSSE @ Virtual University · ACCP @ Aptech (Expected Aug 2027)
 
 Build succeeded.  0 errors.  1 award.  One stubborn love for clean schemas.
@@ -113,11 +118,11 @@ Build succeeded.  0 errors.  1 award.  One stubborn love for clean schemas.
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![EF Core](https://img.shields.io/badge/EF_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoft&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
 
@@ -126,40 +131,37 @@ Build succeeded.  0 errors.  1 award.  One stubborn love for clean schemas.
 ```
 backend/    C#  ASP.NET Core MVC  Web API  EF Core  LINQ  REST
              OAuth 2.0  Identity  RBAC  Idempotent API Design
-             SQL Server  Schema Design  Indexing  Concurrency Control
+             SQL Server  PostgreSQL  Schema Design  Indexing  Concurrency Control
 
-frontend/   React  TypeScript  Next.js  Tailwind  GSAP  Three.js
+frontend/   React  TypeScript  Next.js  Tailwind  Flutter  Riverpod
 
 security/   OAuth 2.0 (Google · GitHub · Discord)  ASP.NET Core Identity  JWT
 
-tools/      Visual Studio  Git  GitHub  Postman  Firebase  Supabase
+tools/      Visual Studio  Git  GitHub  Postman  Supabase  Firebase
 ```
 
 ---
 
-
-
 ## `// stack trace of a career`
 
 ```text
-at Aptech.ACCP_Student                          (Karachi, 2025 — present, Aug 2027)
-   ASP.NET Core, EF Core, SQL Server, PHP, React. Building while studying.
-   Runner-Up: Vision 2025 (Mockrithm). Winner: Tech Olympics S1 (Excel Intelligence).
+at ShifaHealthcare.SoftwareDeveloper            (Karachi, Remote — Apr 2026 — Present)
+   Clinical operations ERP, automated invoice dispatch, PostgreSQL row-level locks.
 
-at VirtualUniversity.BSSE_Student               (Remote, ongoing)
-   BSc Software Engineering. Theory that explains the code I'm already writing.
-
-at SelfBuilt.OnlineArtGallery                   (2025 — present)
+at Production.OnlineArtGallery                  (2025 — Present)
    Full e-commerce platform. Real auctions. Real OAuth. Real concurrency problem.
    Solved it. Committed it. It's on GitHub. gallrex.runasp.net
 
-at SelfBuilt.ShifaManagementSystem              (2025)
-   Hospital and medical management system. Role-based workflow, appointment scheduling, patient records.
-   github.com/ahmed-husssain/ShifaMangementSystem
-
-at SelfBuilt.Mockrithm                          (2025)
-   AI interview prep platform. Runner-Up out of all Aptech Vision 2025 entries.
+at AptechVision.Mockrithm                       (2025)
+   AI interview simulation. Runner-Up out of 50+ competing institutions.
    mockrithm.me — still live.
+
+at Aptech.ACCP_Student                          (Karachi, 2025 — Expected Aug 2027)
+   ASP.NET Core, EF Core, SQL Server, PostgreSQL, React. Building while studying.
+   Winner: Tech Olympics S1 (Excel Intelligence).
+
+at VirtualUniversity.BSSE_Student               (Remote, Ongoing)
+   BSc Software Engineering. Theory that explains the code I'm already shipping.
 
 at School.Matric_CS                             (2024)
    Faiz-e-Mushtaq Education Foundation, Karachi.
@@ -170,7 +172,7 @@ at School.Matric_CS                             (2024)
 
 <div align="center">
 
-**[ahmedd-dev.vercel.app](https://ahmedd-dev.vercel.app/)** · **[ahamedhussain067@gmail.com](mailto:ahamedhussain067@gmail.com)** · **[LinkedIn](https://linkedin.com/in/syed-ahmed-hussain)**
+**[ahmedhusssain.vercel.app](https://ahmedhusssain.vercel.app/)** · **[ahmedhusssain.dev@gmail.com](mailto:ahmedhusssain.dev@gmail.com)** · **[LinkedIn](https://linkedin.com/in/ahmed-husssain)**
 
 *If you read this far, the bid is idempotent. You can click hire twice. It's fine.*
 
