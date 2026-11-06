@@ -33,62 +33,46 @@ SELECT
     [Engineer]    = 'Ahmed Hussain',
     [Location]    = 'Karachi, Pakistan (PKT / UTC+5)',
     [CurrentRole] = 'Software Developer @ Shifa Healthcare (Remote)',
-    [Focus]       = 'Backend .NET | Relational Database Architecture',
-    [CoreStack]   = STRING_AGG(tech, ' · ') 
-                    FROM (VALUES ('C#'), ('ASP.NET Core'), ('EF Core'), ('SQL Server'), ('PostgreSQL')) AS T(tech),
-    [Status]      = 'Shipping Production Code & Building in Public'
+    [CoreStack]   = 'C# · ASP.NET Core · SQL Server · PostgreSQL',
+    [Focus]       = 'Concurrency Control · Clean Schemas · Idempotent APIs'
 WHERE 
-    UnhandledExceptions = 0 
-    AND IdempotencyGuaranteed = 1;
+    UnhandledExceptions = 0 AND IdempotencyGuaranteed = 1;
 ```
 
 ---
 
-## Live Projects
-
-> These resolve. Click them.
+## Live Systems
 
 | Project | What it is & Architecture | Stack | Status |
 |:--------|:--------------------------|:------|:------:|
-| **[Online Art Gallery](https://gallrex.runasp.net)** | Digital art auction platform — live bidding engine, EF Core optimistic concurrency (`RowVersion`), sub-15s auto-settlement worker | ASP.NET Core MVC · EF Core · SQL Server · SignalR | `RUNNING` |
-| **[Shifa Management System](https://github.com/ahmed-husssain/ShifaMangementSystem)** | Clinical operations ERP — dynamic fee billing engine, atomic row locks (`SELECT ... FOR UPDATE`), WhatsApp automated invoice pipeline | Flutter · Riverpod · Supabase / PostgreSQL · Clean Arch | `SHIPPED` |
-| **[Mockrithm](https://mockrithm.me)** | AI technical interview simulation engine — **Runner-Up @ Aptech Vision 2025** out of 50+ competing teams | Next.js · Firebase · Data Structures & Algorithms | `LIVE` |
+| **[Online Art Gallery](https://gallrex.runasp.net)** | Live auction engine with EF Core optimistic concurrency (`RowVersion`) & auto-settlement worker | ASP.NET Core MVC · EF Core · SQL Server · SignalR | `RUNNING` |
+| **[Shifa Management System](https://github.com/ahmed-husssain/ShifaMangementSystem)** | Clinical ERP with atomic row locks (`SELECT ... FOR UPDATE`) & automated WhatsApp invoice pipeline | Flutter · Supabase / PostgreSQL · Riverpod | `SHIPPED` |
+| **[Mockrithm](https://mockrithm.me)** | AI technical interview simulation engine — **Runner-Up @ Aptech Vision 2025** | Next.js · Firebase · Algorithms | `LIVE` |
 | **[E-Books Platform](https://github.com/ahmed-husssain)** | Digital library with session management and normalized relational schema | C# / MVC · Relational Database · Tailwind CSS | `SHIPPED` |
 
 ---
 
-## What I Actually Built in the Gallery
-
-No tutorial code. Here's the stuff that required thinking:
+## What I Actually Built (Production C#)
 
 ```csharp
-// 1. Idempotency — user clicks "Place Bid" twice; only one transaction executes.
+// 1. Idempotency — prevents duplicate transactions on double-click
 var idempotencyKey = Request.Headers["X-Idempotency-Key"].ToString();
 if (_memoryCache.TryGetValue(idempotencyKey, out object cached))
     return Json(cached);  // same response, zero duplicate processing
 
-// 2. Optimistic concurrency — two collectors bid at the exact same millisecond.
-try 
-{ 
+// 2. Optimistic concurrency — two collectors bid at the exact same millisecond
+try { 
     await _context.SaveChangesAsync(); 
 }
-catch (DbUpdateConcurrencyException)
-{
-    return Json(new { message = "Another collector bid right before you. Please refresh." });
-    // no silent failure. no data corruption. deterministic conflict resolution.
+catch (DbUpdateConcurrencyException) {
+    return Conflict(new { message = "Another bid committed right before yours. Please reload." });
 }
 
-// 3. Auction close state — price reset when admin sets a higher starting price
-if (product.Price > (existing.CurrentBid ?? 0))
-{
-    existing.CurrentBid      = null;  // reset active bid
-    existing.HighestBidderId = null;  // reset winner
-    existing.BidCount        = 0;     // reset counter
+// 3. Auction state reset — price integrity guard
+if (product.Price > (existing.CurrentBid ?? 0)) {
+    existing.CurrentBid = null; existing.HighestBidderId = null; existing.BidCount = 0;
 }
-// because showing a "winning bid" below the starting price is not a feature.
 ```
-
-> Multi-provider OAuth (Google, GitHub, Discord) · ASP.NET Core Identity RBAC · Relational schema design · Index strategy · Idempotent endpoints · Concurrency control
 
 ---
 
@@ -97,13 +81,10 @@ if (product.Price > (existing.CurrentBid ?? 0))
 ```text
   Ahmed -> bin/Release/net8.0/Ahmed.dll
 
-  info  SHIFA      : clinical ERP in production, atomic billing locks, automated invoices
-  info  GALLREX    : live auction engine, idempotent bids, OAuth 2.0, real users
-  info  MOCKRITHM  : AI interview prep, Firebase backend, public deployment
-  warn  APTECH2025 : Runner-Up — Aptech Vision 2025. Project: Mockrithm.
-  warn  OLYMPICS25 : Winner — Aptech Tech Olympics Season 1 (Master of Excel Intelligence)
-  warn  TECHWIZ    : Participant — Aptech TechWiz. Project: FurShield.
-  info  STUDYING   : BSSE @ Virtual University · ACCP @ Aptech (Expected Aug 2027)
+  info  SHIFA     : clinical ERP in production, atomic billing locks, automated invoices
+  info  GALLREX   : live auction engine, idempotent bids, OAuth 2.0, real users
+  warn  APTECH25  : Runner-Up — Aptech Vision 2025 (Project: Mockrithm)
+  info  STUDYING  : BSSE @ Virtual University · ACCP @ Aptech (Expected 2027)
 
 Build succeeded.  0 errors.  1 award.  One stubborn love for clean schemas.
 ```
@@ -129,15 +110,10 @@ Build succeeded.  0 errors.  1 award.  One stubborn love for clean schemas.
 </div>
 
 ```
-backend/    C#  ASP.NET Core MVC  Web API  EF Core  LINQ  REST
-             OAuth 2.0  Identity  RBAC  Idempotent API Design
-             SQL Server  PostgreSQL  Schema Design  Indexing  Concurrency Control
-
-frontend/   React  TypeScript  Next.js  Tailwind  Flutter  Riverpod
-
-security/   OAuth 2.0 (Google · GitHub · Discord)  ASP.NET Core Identity  JWT
-
-tools/      Visual Studio  Git  GitHub  Postman  Supabase  Firebase
+backend/    C# · ASP.NET Core · Web API · EF Core · Concurrency Control · SQL Server · PostgreSQL
+frontend/   React · TypeScript · Next.js · Tailwind CSS · Flutter · Riverpod
+security/   OAuth 2.0 (Google · GitHub · Discord) · ASP.NET Identity · RBAC · JWT
+tooling/    Visual Studio · Git · GitHub · Postman · Supabase
 ```
 
 ---
@@ -149,23 +125,13 @@ at ShifaHealthcare.SoftwareDeveloper            (Karachi, Remote — Apr 2026 �
    Clinical operations ERP, automated invoice dispatch, PostgreSQL row-level locks.
 
 at Production.OnlineArtGallery                  (2025 — Present)
-   Full e-commerce platform. Real auctions. Real OAuth. Real concurrency problem.
-   Solved it. Committed it. It's on GitHub. gallrex.runasp.net
+   Full e-commerce platform. Real auctions. Real OAuth. Concurrency conflict resolution.
 
 at AptechVision.Mockrithm                       (2025)
-   AI interview simulation. Runner-Up out of 50+ competing institutions.
-   mockrithm.me — still live.
+   AI interview simulation. Runner-Up out of 50+ competing institutions across Karachi.
 
-at Aptech.ACCP_Student                          (Karachi, 2025 — Expected Aug 2027)
-   ASP.NET Core, EF Core, SQL Server, PostgreSQL, React. Building while studying.
-   Winner: Tech Olympics S1 (Excel Intelligence).
-
-at VirtualUniversity.BSSE_Student               (Remote, Ongoing)
-   BSc Software Engineering. Theory that explains the code I'm already shipping.
-
-at School.Matric_CS                             (2024)
-   Faiz-e-Mushtaq Education Foundation, Karachi.
-   Started writing code. Didn't stop.
+at Academic.Continuous_Learning                 (Ongoing — Expected 2027)
+   BSSE @ Virtual University · ACCP @ Aptech. Building while studying.
 ```
 
 ---
