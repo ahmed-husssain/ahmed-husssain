@@ -10,7 +10,7 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                AHMED HUSSAIN  //  backend engineer           │
+│                AHMED HUSSAIN  //  backend developer           │
 │         C# · ASP.NET Core · PostgreSQL · SQL Server          │
 │            shipping production code @ shifa healthcare       │
 └──────────────────────────────────────────────────────────────┘
