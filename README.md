@@ -16,7 +16,7 @@
 └──────────────────────────────────────────────────────────────┘
 ```
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2600&pause=1200&color=58A6FF&center=true&vCenter=true&width=620&lines=Backend+Engineer+%7C+C%23+.NET+%26+SQL+Server;Idempotent+APIs.+Because+double-charging+hurts.;Clean+schemas+first.+Features+second.;Runner-Up+%40+Aptech+Vision+2025;Shipping+Production+Code+%40+Shifa+Healthcare)](https://ahmedhusssain.vercel.app/)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2600&pause=1200&color=58A6FF&center=true&vCenter=true&width=620&lines=Backend+Developer+%7C+C%23+.NET+%26+SQL+Server;Idempotent+APIs.+Because+double-charging+hurts.;Clean+schemas+first.+Features+second.;Runner-Up+%40+Aptech+Vision+2025;Shipping+Production+Code+%40+Shifa+Healthcare)](https://ahmedhusssain.vercel.app/)
 
 [![Portfolio](https://img.shields.io/badge/Website-0d0d0d?style=flat-square&logo=vercel&logoColor=white)](https://ahmedev.web.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ahmed-husssain)
