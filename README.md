@@ -2,7 +2,7 @@
   You read source before you hire. Respect.
   That's exactly how I approach every codebase I inherit.
 
-  Backend that actually runs: https://ahmedhusssain.vercel.app/
+  Backend that actually runs: https://ahmedev.web.app/
   Problem worth solving?     ahmedhusssain.dev@gmail.com
 -->
 
@@ -18,7 +18,7 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2600&pause=1200&color=58A6FF&center=true&vCenter=true&width=620&lines=Backend+Engineer+%7C+C%23+.NET+%26+SQL+Server;Idempotent+APIs.+Because+double-charging+hurts.;Clean+schemas+first.+Features+second.;Runner-Up+%40+Aptech+Vision+2025;Shipping+Production+Code+%40+Shifa+Healthcare)](https://ahmedhusssain.vercel.app/)
 
-[![Portfolio](https://img.shields.io/badge/Website-0d0d0d?style=flat-square&logo=vercel&logoColor=white)](https://ahmedhusssain.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Website-0d0d0d?style=flat-square&logo=vercel&logoColor=white)](https://ahmedev.web.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ahmed-husssain)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ahmedhusssain.dev@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ahmed-husssain)
@@ -138,7 +138,7 @@ at Academic.Continuous_Learning                 (Ongoing — Expected 2027)
 
 <div align="center">
 
-**[ahmedhusssain.vercel.app](https://ahmedhusssain.vercel.app/)** · **[ahmedhusssain.dev@gmail.com](mailto:ahmedhusssain.dev@gmail.com)** · **[LinkedIn](https://linkedin.com/in/ahmed-husssain)**
+**[ahmedhusssain.vercel.app](https://ahmedev.web.app/)** · **[ahmedhusssain.dev@gmail.com](mailto:ahmedhusssain.dev@gmail.com)** · **[LinkedIn](https://linkedin.com/in/ahmed-husssain)**
 
 *If you read this far, the bid is idempotent. You can click hire twice. It's fine.*
 
