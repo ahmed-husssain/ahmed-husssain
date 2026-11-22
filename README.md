@@ -1,4 +1,3 @@
-```
 <div align="center">
 
 # Syed Ahmed Hussain
@@ -40,4 +39,3 @@
 **[ahmeddev.web.app](https://ahmeddev.web.app/)** · **[ahmedhusssain117@gmail.com](mailto:ahmedhusssain117@gmail.com)** · **[LinkedIn](https://www.linkedin.com/in/syed-ahmed-hussain/)**
 
 </div>
-```
